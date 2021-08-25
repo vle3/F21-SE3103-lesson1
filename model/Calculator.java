@@ -17,6 +17,21 @@ public class Calculator {
         result = lastN + lastN2;
     }
 
+    public void multiply()
+    {
+        result = lastN * lastN2;
+    }
+
+    public void subtract()
+    {
+        result = lastN - lastN2;
+    }
+
+    public void divide()
+    {
+        result = lastN / lastN2;
+    }
+
     public double getResult()
     {
         return result;
