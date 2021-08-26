@@ -1,20 +1,21 @@
 package model;
 
+import java.util.ArrayList;
+
 public class PiggyBank {
     
     private int balance;
-    private int coinCount;
+    private ArrayList<Coin> coinHistory = new ArrayList<Coin>();
     
     public PiggyBank()
     {
         balance = 0 ;
-        coinCount = 0 ;
     }
 
     public void enter(Coin c)
     {
-        ++coinCount;
         balance += c.getValue();
+        coinHistory.add(c);
     }
 
     public int getBalance()
@@ -24,7 +25,17 @@ public class PiggyBank {
 
     public int getCoinCount()
     {
-        return coinCount;
+        return coinHistory.size();
+    }
+
+    public ArrayList<Coin> getCoinHistory() {
+        return coinHistory;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Balance = " + balance + ", Coin count = " + coinHistory.size();
     }
 
 }
